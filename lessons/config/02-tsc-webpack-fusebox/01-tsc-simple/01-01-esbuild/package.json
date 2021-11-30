@@ -1,0 +1,16 @@
+{
+  "name": "01-01-esbuild",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild src/main.ts --bundle --minify --sourcemap --outfile=dist/end.js ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "esbuild": "^0.14.1"
+  }
+}
