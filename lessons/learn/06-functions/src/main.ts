@@ -84,3 +84,11 @@ function makeDate(mOrTimestamp: number, d?: number, y?: number): Date { // imple
 const d1 = makeDate(12345678);
 const d2 = makeDate(5, 5, 5);
 //const d3 = makeDate(1, 3); // pas d'overload ici à deux éléments
+
+
+// Comparer les fonctions
+let x = (value: number) => value * 1.2;
+let y = (value: number, tva: number) => value * tva;
+
+// x = y; // pas possible
+y = x;
