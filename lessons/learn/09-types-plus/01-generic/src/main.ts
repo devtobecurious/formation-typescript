@@ -67,3 +67,22 @@ function setPower<Type extends WithPower>(item: Type) {
     item.power = 12;
 }
 setPower({ power: 15});
+
+/** PARTICULAR with keyof // contraints one for other */
+
+function getProperty<Type, Key extends keyof Type>(obj: Type, key: Key) {
+    return obj[key];
+}
+const warrior = {
+    power: 12,
+    health: 100
+};
+let result = getProperty(warrior, "power");
+
+//> Explication de keyof
+
+type Point = {x: number, y: number};
+type P = keyof Point;
+
+let item !: P;
+
