@@ -22,3 +22,13 @@ function displayWarrior(x: Warrior | Warrior[]) {
 
 displayWarrior({ power: 1});
 displayWarrior([{ power: 1}]);
+
+/** Literal types */
+let x: 'hello';
+// x = 'buy'
+x = 'hello';
+
+function setWeaponName(name: 'Blaster' | 'Light saber') {
+}
+
+// setWeaponName('coucou') => error
