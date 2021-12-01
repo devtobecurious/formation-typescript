@@ -1,3 +1,5 @@
+import  * as war from './warrior';
+
 class Character {
     constructor(public surname: string) {
 
@@ -9,14 +11,18 @@ interface Warrior {
     power?: number;
 }
 
+interface Warrior {
+    shield: number | null;
+}
+
 class Wookie extends Character implements Warrior {
+    shield !: number;
+
     constructor(public surname: string) {
         super(surname);
     }
 
-    attak(perso: Character): void {
-
-    }
+    attak(perso: Character): void {}
 
     get name(): string {
         return 'chewie'

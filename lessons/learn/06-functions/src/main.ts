@@ -71,6 +71,42 @@ const wookie = makeWookie(WookieWithString);
 wookie.sayHello();
 
 
+class Employee {
+  constructor(
+    public identifier: string
+  ) {}
+}
+
+let identifier = 0;
+function createEmployee(ctor: typeof Employee): Employee {
+  const employee = new ctor(`test-${identifier++}`);
+  console.log(employee.identifier);
+
+  return employee;
+}
+
+const employee = createEmployee(Employee);
+
+abstract class EmployeeBis {
+  constructor(
+    public identifier: string
+  ) {}
+}
+
+class FinanceEmployee extends EmployeeBis {}
+
+class MarketingEmployee extends EmployeeBis {}
+
+
+function createEmployeeBis(ctor: new (identifier: string) => EmployeeBis) {
+  const employee = new ctor(`test-${identifier++}`);
+  console.log(employee.identifier);
+}
+
+createEmployeeBis(FinanceEmployee);
+createEmployeeBis(MarketingEmployee);
+
+
 // -------- OVERLOADS --------------
 function makeDate(timestamp: number): Date; // overload
 function makeDate(m: number, d: number, y: number): Date; // overload
