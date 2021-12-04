@@ -9,7 +9,8 @@ const result2 = 2;
 // object
 const wookie = {
     surname: 'Chewie',
-    size: 275
+    size: 275,
+    weight: 100
 };
 // wookie.ship //=> ne compile pas
 
